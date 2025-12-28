@@ -19,7 +19,7 @@ CREATE TABLE app_user (
 
 CREATE TABLE course (
     id smallint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    code INT NOT NULL UNIQUE,
+    code VARCHAR NOT NULL UNIQUE,
     name VARCHAR NOT NULL,
     credits smallint NOT NULL
 );
