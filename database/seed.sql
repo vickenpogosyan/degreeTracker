@@ -3,18 +3,20 @@ VALUES
 ('Computer Science', FALSE, 90),
 ('Computer Security', TRUE, 120);
 
-INSERT INTO "app_user" (email, password) 
+INSERT INTO "app_user" (email, password, degree_id) 
 VALUES
-('allister.lobo@gmail.com', 'AL321!'),
-('simifbenro@hotmail.com', 'SF123!');
+('allister.lobo@gmail.com', 'AL321!', 1),
+('simifbenro@hotmail.com', 'SF123!', 2);
 
 INSERT INTO "course" (code, name, credits)
 VALUES
-(2030, 'Advanced Object-Oriented Prograaming', 3),
-(3421, 'Computer Organization', 4);
+('EECS 2030', 'Advanced Object-Oriented Programming', 3),
+('EECS 3421', 'Computer Organization', 4);
 
 INSERT INTO "enrollment" (user_id, course_id, status)
 VALUES
-(1, 1 , 'Enrolled'),
-(1, 2, 'Not Completed'),
-(2, 2, 'Completed');
+(
+  (SELECT id FROM app_user WHERE email = 'allister.lobo@gmail.com'),
+  (SELECT id FROM course WHERE code = 'EECS 2030'),
+  'Enrolled'
+);
