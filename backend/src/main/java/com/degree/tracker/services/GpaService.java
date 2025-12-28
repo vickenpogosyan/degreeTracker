@@ -37,10 +37,17 @@ public class GpaService {
 			if (enrollment.getStatus() == Enrollment.Status.COMPLETED 
 					&& enrollment.getGrade() != null) {
 				double points = gradeToPoints(enrollment.getGrade());
+				int credits = enrollment.getCourse().getCredits();
 				
+				totalPoints += points * credits;
+				totalCredits += credits;
 			}
 		}
-		return totalCredits;
+		
+		if (totalCredits == 0) {
+			return 0.0;
+		}
+		return totalPoints / totalCredits;
 	}
 
 	private double gradeToPoints(String grade) {
