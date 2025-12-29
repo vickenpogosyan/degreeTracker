@@ -10,7 +10,7 @@ import com.degree.tracker.repositories.EnrollmentRepository;
 @Service
 public class GpaService {
 	
-	//A+  → highest
+//A+  → highest
 //	A
 //	B+
 //	B
@@ -73,9 +73,9 @@ public class GpaService {
 	            return 1.3;
 	        case "D":
 	            return 1.0;
-	        case "E":   // fail, but close
+	        case "E":   
 	            return 0.5;
-	        case "F":   // worst fail
+	        case "F":   
 	            return 0.0;
 	        default:
 	            return 0.0;

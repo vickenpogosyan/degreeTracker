@@ -1,21 +1,23 @@
 package com.degree.tracker.models;
 
+import jakarta.persistence.*;
+
+@Entity
 public class Course {
-	private String id;
-	private String name;
-	private String courseCode;
-	private int credits;
-	
-	public Course(String id, String name, String courseCode, int credits) {
-		this.id = id;
-		this.name = name;
-		this.courseCode = courseCode;
-		this.credits = credits;
-		
-	}
 
-	public int getCredits() {
-		return this.credits;
-	}
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
+    private String code;
+    private String name;
+    private int credits;
+
+    public Course() {}
+
+    public int getCredits() {
+        return credits;
+    }
+
+    
 }
