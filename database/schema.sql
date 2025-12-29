@@ -22,6 +22,7 @@ CREATE TABLE course (
     code VARCHAR NOT NULL UNIQUE,
     name VARCHAR NOT NULL,
     credits smallint NOT NULL
+        CHECK (credits > 0)
 );
 
 CREATE TABLE enrollment (
