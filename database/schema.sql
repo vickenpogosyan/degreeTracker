@@ -8,7 +8,7 @@ CREATE TABLE degree (
 CREATE TABLE app_user (
     id smallint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     email VARCHAR NOT NULL UNIQUE,
-    password VARCHAR NOT NULL,
+    password_hash VARCHAR NOT NULL,
     degree_id smallint NOT NULL,
 
     CONSTRAINT fk_user_degree
