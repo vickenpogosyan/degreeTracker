@@ -3,7 +3,7 @@ VALUES
 ('Computer Science', FALSE, 90),
 ('Computer Security', TRUE, 120);
 
-INSERT INTO "app_user" (email, password, degree_id) 
+INSERT INTO "app_user" (email, password_hash, degree_id) 
 VALUES
 ('allister.lobo@gmail.com', 'AL321!', 1),
 ('simifbenro@hotmail.com', 'SF123!', 2);
